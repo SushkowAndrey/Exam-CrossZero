@@ -17,6 +17,7 @@ using namespace std;
 int main()
 {
     setlocale(0, "ru");
+    system("chcp 1251 > nul");
     srand(time(0));
 
     //журнал записи игры c компьютером и игроком
@@ -85,9 +86,13 @@ int main()
             Interface::PrintСonditionOfGame();
             break;
         case 8://очистить журналы
+        {
             ToClearTheAutoContents("GameLogComputer.csv");
             ToClearTheAutoContents("GameLogTwoPlayer.csv");
+            ToClearTheAutoContents("AutoSaveGame.csv");
+            ToClearTheAutoContents("AutoSaveGamePlayers.csv");
             Interface::PrintClear();
+        }
             break;
         case 0:
             Interface::PrintExit();

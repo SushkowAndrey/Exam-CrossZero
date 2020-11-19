@@ -145,6 +145,8 @@
     <ClInclude Include="AutoFillTheField.h" />
     <ClInclude Include="CheckingTheSolidСourse.h" />
     <ClInclude Include="CoordinateLastSave.h" />
+    <ClInclude Include="ExportToLog.h" />
+    <ClInclude Include="ExportToLogAutoSave.h" />
     <ClInclude Include="GameLog.h" />
     <ClInclude Include="GameResult.h" />
     <ClInclude Include="CheckingTheSymbol.h" />

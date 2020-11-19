@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <fstream>
 #include <string>
@@ -35,7 +35,7 @@ vector <CoordinateAutoLastSave> ImportLastSave(string logPath) {
 	}
 	catch (...)
 	{
-		cout << "‘айл не открыт" << endl;
+		cout << "Файл не открыт" << endl;
 	}
 	return NewTemp;
 }
@@ -76,7 +76,7 @@ vector <CoordinateAutoLastSave> ImportLastSave(string logPath, string players) {
 	}
 	catch (...)
 	{
-		cout << "‘айл не открыт" << endl;
+		cout << "Файл не открыт" << endl;
 	}
 	return NewTemp;
 }
@@ -117,16 +117,14 @@ vector <GameLog> ImportLog(string logPath)
 				position = temp.find(";");
 				motion = temp.substr(0, position);
 				temp = temp.substr(position + 1);
-				NewTemp.push_back(InputGameLog(count, player, x, y, motion));
-
-				
+				NewTemp.push_back(InputGameLog(count, player, x, y, motion));	
 			}
 		}
 		FileLog.close();
 	}
 	catch (...)
 	{
-		cout << "‘айл не открыт" << endl;
+		cout << "Файл не открыт" << endl;
 	}
 	return NewTemp;
 }

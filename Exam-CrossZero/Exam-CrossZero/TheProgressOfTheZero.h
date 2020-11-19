@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 
 using namespace std;
@@ -14,5 +14,4 @@ void TheProgressOfTheZero(char board[SIZE][SIZE], int &x, int &y, int &count) {
         } while (y < 0 || y > 2);
     } while (board[x][y] == 'X' || board[x][y] == 'O');
     board[x][y] = 'O';
-    //count++;
 }

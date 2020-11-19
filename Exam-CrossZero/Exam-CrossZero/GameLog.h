@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <string>
 
@@ -56,7 +56,7 @@ GameLog InputGameLog(int count, string player, int coordinateXplayer, int coordi
 	return gameLog;
 }
 
-//запись в журнал в случае ничьи-по¤вл¤етс¤ мусор
+//запись в журнал в случае ничьи-появляетс¤ мусор
 GameLog InputGameLog(string result)
 {
 	GameLog gameLog(result);
@@ -66,14 +66,14 @@ GameLog InputGameLog(string result)
 //вывод элемента журнала на экран
 void PrintGameLog(GameLog gameLog)
 {
-	cout << "’од игры " << gameLog.GetCount() << " - " << gameLog.GetPlayer() << " выбрал координаты "
+	cout << "Ход игры " << gameLog.GetCount() << " - " << gameLog.GetPlayer() << " выбрал координаты "
 		<< gameLog.GetCoordinateXplayer() << " и " << gameLog.GetCoordinateYplayer() << " - " << gameLog.GetResult() << endl;
 }
 
 //вывод всего журнала на экран
 void OutputLog(vector <GameLog> gameLog)
 {
-	cout << "∆урнал последней игры" << endl;
+	cout << "Журнал последней игры" << endl;
 	for (auto element : gameLog)
 	{
 		PrintGameLog(element);

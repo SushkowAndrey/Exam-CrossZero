@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <iostream>
 #include <vector>
@@ -7,7 +7,8 @@
 #include "TheProgressOfTheZero.h"
 #include "PlayingField.h"
 #include "GameLog.h"
-#include "ExportSave.h"
+#include "ExportToLog.h"
+#include "ExportToLogAutoSave.h"
 #include "ImportLastSave.h"
 #include "AutoFillTheField.h"
 #include "CheckingTheSolidСourse.h"
@@ -47,7 +48,7 @@ int TheProcessOfPlayingWithTheComputer (char board[SIZE][SIZE], vector <GameLog>
             break;
         }
         else if (count > 9) {
-            gameLog.push_back(InputGameLog("Ничья"));
+            gameLog.push_back(InputGameLog(count, "Игрок", CoordinateX1, CoordinateY1, "Ничья"));
             ExportToLog(gameLog, gameLog.size());
             break;
         }
@@ -66,14 +67,13 @@ int TheProcessOfPlayingWithTheComputer (char board[SIZE][SIZE], vector <GameLog>
         if (CheckingTheSolidСourse(board, 'O'))
         {
             winO = true;
-
             //сохранение журнала игры
             gameLog.push_back(InputGameLog(count, "Компьютер", CoordinateX2, CoordinateY2, "Победа_компьютера"));
             ExportToLog(gameLog, gameLog.size());
             break;
         }
         else if (count > 9) {
-            gameLog.push_back(InputGameLog("Ничья"));
+            gameLog.push_back(InputGameLog(count, "Игрок", CoordinateX1, CoordinateY1, "Ничья"));
             ExportToLog(gameLog, gameLog.size());
             break;
         }

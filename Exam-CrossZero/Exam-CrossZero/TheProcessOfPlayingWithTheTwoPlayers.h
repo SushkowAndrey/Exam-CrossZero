@@ -7,6 +7,8 @@
 #include "TheProgressOfTheZero.h"
 #include "PlayingField.h"
 #include "GameLog.h"
+#include "ExportToLog.h"
+#include "ExportToLogAutoSave.h"
 #include "ExportSave.h"
 #include "ImportLastSave.h"
 #include "AutoFillTheField.h"
@@ -23,6 +25,8 @@ int TheProcessOfPlayingWithTheTwoPlayers(char board[SIZE][SIZE], vector <GameLog
     bool winX = false, winO = false;
     //переменные координат, для возврата из функции в журнал записи, передаются по ссылке функцию
     int CoordinateX1 = 0, CoordinateY1 = 0, CoordinateX2 = 0, CoordinateY2 = 0;
+    //очистка последнего автосохранения
+    ToClearTheAutoContents("AutoSaveGamePlayers.csv");
     Interface::PrintGame();
     //автосохранение имен
     сoordinateAutoLastSave.push_back(InputCoordinate(players.GetPlayer1(), players.GetPlayer2()));
@@ -46,7 +50,7 @@ int TheProcessOfPlayingWithTheTwoPlayers(char board[SIZE][SIZE], vector <GameLog
             break;
         }
         else if (count > 9) {
-            gameLog.push_back(InputGameLog("Ничья"));
+            gameLog.push_back(InputGameLog(count, players.GetPlayer1(), CoordinateX1, CoordinateY1, "Ничья"));
             ExportToLog(gameLog, gameLog.size(), "Игроки");
             break;
         }
@@ -69,7 +73,7 @@ int TheProcessOfPlayingWithTheTwoPlayers(char board[SIZE][SIZE], vector <GameLog
             break;
         }
         else if (count > 9) {
-            gameLog.push_back(InputGameLog("Ничья"));
+            gameLog.push_back(InputGameLog(count, players.GetPlayer1(), CoordinateX1, CoordinateY1, "Ничья"));
             ExportToLog(gameLog, gameLog.size(), "Игроки");
             break;
         }

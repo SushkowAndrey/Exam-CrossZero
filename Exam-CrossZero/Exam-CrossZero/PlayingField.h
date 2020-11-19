@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 
 using namespace std;
@@ -10,7 +10,6 @@ void PlayingField(char board[SIZE][SIZE], int size)
         if (i == 0) cout << "| |";
         cout << "|" << i << "|";
     }
-    int x, y;
     cout << endl;
     for (int x = 0; x < 3; x++) {
         cout << "|" << x << "|";//левая граница координат
